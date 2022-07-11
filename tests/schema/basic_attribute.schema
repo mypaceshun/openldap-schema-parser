@@ -1,0 +1,13 @@
+attributeType ( 1.1.1.1
+  NAME 'simpleAttribute'
+  DESC 'This is SimpleAttribute!!!'
+  SUP top
+  EQUALITY caseIgnoreMatch
+  ORDERING octetStringSubstringsStringMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{1024}
+  SINGLE-VALUE
+  COLLECTIVE
+  NO-USER-MODIFICATION
+  USAGE userApplications
+)

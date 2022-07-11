@@ -1,0 +1,24 @@
+objectidentifier testRoot 1.1.1.1
+objectidentifier testAttribute testRoot:1.1
+objectidentifier testObjectClass testRoot:2
+
+attributetype ( testAttribute:1
+	NAME 'testAttrStr'
+	DESC 'test attribute'
+	EQUALITY caseExactMatch
+	SUBSTR caseExactSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{1024})
+
+attributetype ( testAttribute:2 NAME ('testAttrStr001') SUP testAttrStr )
+attributetype ( testAttribute:3 NAME ('testAttrStr002') SUP testAttrStr )
+attributetype ( testAttribute:4 NAME ('testAttrStr003') SUP testAttrStr )
+attributetype ( testAttribute:5 NAME ('testAttrStr004') SUP testAttrStr )
+attributetype ( testAttribute:6 NAME ('testAttrStr005') SUP testAttrStr )
+
+objectclass ( testObjectClass:1
+	NAME 'testUser'
+	DESC 'test objectClass for KAWAI Shun'
+	SUP top
+	AUXILIARY
+	MAY ( testAttrStr $ 
+	      testAttrStr001 $ testAttrStr002 $ testAttrStr003 $ testAttrStr004 $ testAttrStr005 ) )

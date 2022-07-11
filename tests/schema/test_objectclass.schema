@@ -1,0 +1,55 @@
+objectclass ( 1.1.1.1 )
+
+objectclass ( 1.1.1.1
+  NAME ( 'withalias' 'alias' )
+)
+
+objectclass ( 1.1.1.1
+  NAME 'obsoleteTest'
+  OBSOLETE
+)
+
+objectclass ( 1.1.1.1
+  NAME 'structuralTestAbstract'
+  ABSTRACT
+)
+
+objectclass ( 1.1.1.1
+  NAME 'structuralTestStructural'
+  STRUCTURAL
+)
+
+objectclass ( 1.1.1.1
+  NAME 'structuralTestAuxiliary'
+  AUXILIARY
+)
+
+objectclass ( 1.1.1.1
+  NAME 'mustTest'
+  MUST single
+)
+
+objectclass ( 1.1.1.1
+  NAME 'mustTest'
+  MUST ( single )
+)
+
+objectclass ( 1.1.1.1
+  NAME 'mustTest'
+  MUST ( double $ double )
+)
+
+objectclass ( 1.1.1.1
+  NAME 'mayTest'
+  MUST single
+)
+
+objectclass ( 1.1.1.1
+  NAME 'mayTest'
+  MUST ( single )
+)
+
+objectclass ( 1.1.1.1
+  NAME 'mayTest'
+  MUST ( double $ double )
+)

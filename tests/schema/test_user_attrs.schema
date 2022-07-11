@@ -1,0 +1,12 @@
+attributetype(1.1.1
+NAME 'userattribute'
+X-ORIGIN 'origin'
+X-SUBSTR 'X- is user attribute'
+)
+
+
+objectclass(1.1.1
+NAME 'userattribute'
+X-ORIGIN 'origin'
+X-SUBSTR 'X- is user attribute'
+)

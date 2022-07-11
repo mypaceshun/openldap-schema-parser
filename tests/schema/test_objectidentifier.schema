@@ -1,0 +1,3 @@
+objectIdentifier testOID 1.1
+objectIdentifier testAttr testOID:1
+objectIdentifier testClass testOID:2

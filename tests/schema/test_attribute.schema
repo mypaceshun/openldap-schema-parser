@@ -1,0 +1,40 @@
+attributeType ( 1.1.1.1 )
+
+attributeType ( 1.1.1.1 
+  NAME ( 'withalias' 'alias' )
+)
+
+attributeType ( 1.1.1.1 
+  NAME 'syntaxTest1'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+)
+
+attributeType ( 1.1.1.1 
+  NAME 'syntaxTestLen'
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{1024}
+)
+
+attributeType ( 1.1.1.1 
+  NAME 'obsoleteTest'
+  OBSOLETE
+)
+
+attributeType ( 1.1.1.1 
+  NAME 'UsageTest1'
+  USAGE userApplications
+)
+
+attributeType ( 1.1.1.1 
+  NAME 'UsageTest2'
+  USAGE directoryOperation
+)
+
+attributeType ( 1.1.1.1 
+  NAME 'UsageTest3'
+  USAGE distributedOperation
+)
+
+attributeType ( 1.1.1.1 
+  NAME 'UsageTest4'
+  USAGE dSAOperation
+)

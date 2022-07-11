@@ -1,0 +1,17 @@
+attributetype(1.1.1
+SUP top
+)
+
+attributetype(1.1.1
+NAME 'somesup'
+SUP cn
+)
+
+objectclass(1.2.2
+SUP top
+)
+
+objectclass(1.2.3
+NAME 'somesup'
+SUP (top $ person)
+)

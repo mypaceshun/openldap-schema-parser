@@ -1,0 +1,7 @@
+objectClass ( 1.1.1.1
+  NAME 'BasicObjectClass'
+  DESC 'This is BasicObjectClass!(2)'
+  SUP top
+  MUST ( cn )
+  MAY ( sn $ givenName )
+)

@@ -1,0 +1,83 @@
+###################################################
+# LDAP schema for KAWAI Shun (shun&osstech.co.jp) #
+###################################################
+
+objectidentifier shunRoot 1.3.6.1.4.1.34468.3.128
+objectidentifier shunAttribute shunRoot:1
+objectidentifier shunObjectClass shunRoot:2
+
+attributetype ( shunAttribute:1
+	NAME 'shunAttrStr'
+	DESC 'test directoryString attribute for KAWAI Shun'
+	EQUALITY caseExactMatch
+	SUBSTR caseExactSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{1024})
+
+attributetype ( shunAttribute:2 NAME ('shunAttrStr001') SUP shunAttrStr)
+attributetype ( shunAttribute:3 NAME ('shunAttrStr002') SUP shunAttrStr)
+attributetype ( shunAttribute:4 NAME ('shunAttrStr003') SUP shunAttrStr)
+attributetype ( shunAttribute:5 NAME ('shunAttrStr004') SUP shunAttrStr)
+attributetype ( shunAttribute:6 NAME ('shunAttrStr005') SUP shunAttrStr)
+attributetype ( shunAttribute:7 NAME ('shunAttrStr006') SUP shunAttrStr)
+attributetype ( shunAttribute:8 NAME ('shunAttrStr007') SUP shunAttrStr)
+attributetype ( shunAttribute:9 NAME ('shunAttrStr008') SUP shunAttrStr)
+attributetype ( shunAttribute:10 NAME ('shunAttrStr009') SUP shunAttrStr)
+attributetype ( shunAttribute:11 NAME ('shunAttrStr010') SUP shunAttrStr)
+attributetype ( shunAttribute:12 NAME ('shunAttrStr011') SUP shunAttrStr)
+attributetype ( shunAttribute:13 NAME ('shunAttrStr012') SUP shunAttrStr)
+attributetype ( shunAttribute:14 NAME ('shunAttrStr013') SUP shunAttrStr)
+attributetype ( shunAttribute:15 NAME ('shunAttrStr014') SUP shunAttrStr)
+attributetype ( shunAttribute:16 NAME ('shunAttrStr015') SUP shunAttrStr)
+attributetype ( shunAttribute:17 NAME ('shunAttrStr016') SUP shunAttrStr)
+attributetype ( shunAttribute:18 NAME ('shunAttrStr017') SUP shunAttrStr)
+attributetype ( shunAttribute:19 NAME ('shunAttrStr018') SUP shunAttrStr)
+attributetype ( shunAttribute:20 NAME ('shunAttrStr019') SUP shunAttrStr)
+attributetype ( shunAttribute:21 NAME ('shunAttrStr020') SUP shunAttrStr)
+attributetype ( shunAttribute:22 NAME ('shunAttrStr021') SUP shunAttrStr)
+attributetype ( shunAttribute:23 NAME ('shunAttrStr022') SUP shunAttrStr)
+attributetype ( shunAttribute:24 NAME ('shunAttrStr023') SUP shunAttrStr)
+attributetype ( shunAttribute:25 NAME ('shunAttrStr024') SUP shunAttrStr)
+attributetype ( shunAttribute:26 NAME ('shunAttrStr025') SUP shunAttrStr)
+attributetype ( shunAttribute:27 NAME ('shunAttrStr026') SUP shunAttrStr)
+attributetype ( shunAttribute:28 NAME ('shunAttrStr027') SUP shunAttrStr)
+attributetype ( shunAttribute:29 NAME ('shunAttrStr028') SUP shunAttrStr)
+attributetype ( shunAttribute:30 NAME ('shunAttrStr029') SUP shunAttrStr)
+attributetype ( shunAttribute:31 NAME ('shunAttrStr030') SUP shunAttrStr)
+attributetype ( shunAttribute:32 NAME ('shunAttrStr031') SUP shunAttrStr)
+attributetype ( shunAttribute:33 NAME ('shunAttrStr032') SUP shunAttrStr)
+attributetype ( shunAttribute:34 NAME ('shunAttrStr033') SUP shunAttrStr)
+attributetype ( shunAttribute:35 NAME ('shunAttrStr034') SUP shunAttrStr)
+attributetype ( shunAttribute:36 NAME ('shunAttrStr035') SUP shunAttrStr)
+attributetype ( shunAttribute:37 NAME ('shunAttrStr036') SUP shunAttrStr)
+attributetype ( shunAttribute:38 NAME ('shunAttrStr037') SUP shunAttrStr)
+attributetype ( shunAttribute:39 NAME ('shunAttrStr038') SUP shunAttrStr)
+attributetype ( shunAttribute:40 NAME ('shunAttrStr039') SUP shunAttrStr)
+attributetype ( shunAttribute:41 NAME ('shunAttrStr040') SUP shunAttrStr)
+attributetype ( shunAttribute:42 NAME ('shunAttrStr041') SUP shunAttrStr)
+attributetype ( shunAttribute:43 NAME ('shunAttrStr042') SUP shunAttrStr)
+attributetype ( shunAttribute:44 NAME ('shunAttrStr043') SUP shunAttrStr)
+attributetype ( shunAttribute:45 NAME ('shunAttrStr044') SUP shunAttrStr)
+attributetype ( shunAttribute:46 NAME ('shunAttrStr045') SUP shunAttrStr)
+attributetype ( shunAttribute:47 NAME ('shunAttrStr046') SUP shunAttrStr)
+attributetype ( shunAttribute:48 NAME ('shunAttrStr047') SUP shunAttrStr)
+attributetype ( shunAttribute:49 NAME ('shunAttrStr048') SUP shunAttrStr)
+attributetype ( shunAttribute:50 NAME ('shunAttrStr049') SUP shunAttrStr)
+attributetype ( shunAttribute:51 NAME ('shunAttrStr050') SUP shunAttrStr)
+
+objectclass ( shunObjectClass:1
+	NAME 'shunUser'
+	DESC 'test objectClass for KAWAI Shun'
+	SUP top
+	AUXILIARY
+        MUST cn
+	MAY ( shunAttrStr $ 
+	      shunAttrStr001 $ shunAttrStr002 $ shunAttrStr003 $ shunAttrStr004 $ shunAttrStr005 $
+              shunAttrStr006 $ shunAttrStr007 $ shunAttrStr008 $ shunAttrStr009 $ shunAttrStr010 $
+	      shunAttrStr011 $ shunAttrStr012 $ shunAttrStr013 $ shunAttrStr014 $ shunAttrStr015 $
+              shunAttrStr016 $ shunAttrStr017 $ shunAttrStr018 $ shunAttrStr019 $ shunAttrStr020 $
+              shunAttrStr021 $ shunAttrStr022 $ shunAttrStr023 $ shunAttrStr024 $ shunAttrStr025 $
+              shunAttrStr026 $ shunAttrStr027 $ shunAttrStr028 $ shunAttrStr029 $ shunAttrStr030 $
+              shunAttrStr031 $ shunAttrStr032 $ shunAttrStr033 $ shunAttrStr034 $ shunAttrStr035 $
+              shunAttrStr036 $ shunAttrStr037 $ shunAttrStr038 $ shunAttrStr039 $ shunAttrStr040 $
+              shunAttrStr041 $ shunAttrStr042 $ shunAttrStr043 $ shunAttrStr044 $ shunAttrStr045 $
+              shunAttrStr046 $ shunAttrStr047 $ shunAttrStr048 $ shunAttrStr049 $ shunAttrStr050 ) )
