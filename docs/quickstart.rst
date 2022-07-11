@@ -20,8 +20,7 @@ Githubより最新版をインストールする場合は以下のコマンド�
 解析結果を標準出力へ出力します。 ::
 
   $ schema-parser test.schema
-  [15:08:39] run script                                                                                                           command.py:20
-             Schema(name=test, objectidentifier_list=[ObjectIdentifier(key='testRoot', oid='1.1.1.1'),                            command.py:25
+  [15:08:39] Schema(name=test, objectidentifier_list=[ObjectIdentifier(key='testRoot', oid='1.1.1.1'),                            command.py:25
              ObjectIdentifier(key='testAttribute', oid='testRoot:1'), ObjectIdentifier(key='testObjectClass', oid='testRoot:2')],              
              attribute_list=[Attribute(oid='testAttribute:1', name='testAttrStr', description='test directoryString attribute',                
              obsolete=False, equality='caseExactMatch', substr='caseExactSubstringsMatch',                                                     
@@ -34,8 +33,7 @@ Githubより最新版をインストールする場合は以下のコマンド�
 ``--expand-oid`` オプションをつけることでObjectIdentifierを利用して表現されているOIDを実際のOIDへ変換することが出来ます。 ::
 
   $ schema-parser --expand-oid test.schema
-  [15:12:33] run script                                                                                                           command.py:20
-             Schema(name=test, objectidentifier_list=[ObjectIdentifier(key='testRoot', oid='1.1.1.1'),                            command.py:25
+  [15:12:33] Schema(name=test, objectidentifier_list=[ObjectIdentifier(key='testRoot', oid='1.1.1.1'),                            command.py:25
              ObjectIdentifier(key='testAttribute', oid='1.1.1.1.1'), ObjectIdentifier(key='testObjectClass', oid='1.1.1.1.2')],
              attribute_list=[Attribute(oid='1.1.1.1.1.1', name='testAttrStr', description='test directoryString attribute',
              obsolete=False, equality='caseExactMatch', substr='caseExactSubstringsMatch',

@@ -21,6 +21,7 @@ Document
    :maxdepth: 2
 
    quickstart.rst
+   schema.rst
 
 API Reference
 -------------

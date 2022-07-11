@@ -56,4 +56,4 @@ Library Usage
   from openldap_schema_parser.parser import parse
 
   result = parse("test.schema")
-  pprint(result)
+  print(result)
