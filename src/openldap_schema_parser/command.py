@@ -17,7 +17,6 @@ install(show_locals=True)
 def cli(target, expand_oid):
     console = Console()
     error_console = Console(stderr=True, style="bold red")
-    console.log("run script")
     try:
         result = parse(target)
         if expand_oid:
