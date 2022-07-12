@@ -180,7 +180,6 @@ def parse(target_file: str) -> Schema:
     :rtype: openldap_schema_parser.Schema
     :raises SchemaParseError: target_fileのパースに失敗
     """
-    Path(__file__).parent
     target_path = Path(target_file)
     text = ""
     with target_path.open() as fd:
