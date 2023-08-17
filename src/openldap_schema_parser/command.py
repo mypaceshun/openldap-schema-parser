@@ -1,5 +1,5 @@
 import click
-from rich.console import Console
+from rich import print
 from rich.traceback import install
 
 from openldap_schema_parser import __name__, __version__
@@ -15,12 +15,10 @@ install(show_locals=True)
 @click.option("--expand-oid", is_flag=True, help="Expand ObjectIdentifier")
 @click.argument("target", type=click.Path(exists=True))
 def cli(target, expand_oid):
-    console = Console()
-    error_console = Console(stderr=True, style="bold red")
     try:
         result = parse(target)
         if expand_oid:
             result.expand_oid()
-        console.log(result)
+        print(result.pprint_str())
     except SchemaParseError as error:
-        error_console.log(error)
+        print(error)

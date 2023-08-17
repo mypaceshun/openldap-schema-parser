@@ -38,3 +38,6 @@ class ObjectIdentifier:
         if suffix is None:
             return self.oid
         return f"{self.oid}.{suffix}"
+
+    def pprint_str(self, width: int = 80, tabsize: int = 8, **kwargs) -> str:
+        return f"objectIdentifier {self.key}\t{self.oid}".expandtabs(tabsize=tabsize)

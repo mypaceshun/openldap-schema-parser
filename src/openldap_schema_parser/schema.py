@@ -85,3 +85,30 @@ class Schema:
             key, suffix = _oid
             if macrooid.key == key:
                 obj.oid = macrooid.get_oid(suffix)
+
+    def pprint(self, width: int = 80, tabsize: int = 8, **kwargs):
+        print(self.pprint_str(width=width, tabsize=tabsize, **kwargs))
+
+    def pprint_str(self, width: int = 80, tabsize: int = 8, **kwargs) -> str:
+        indent = kwargs.get("indent", 4)
+        kwargs["initial_indent"] = kwargs.get("initial_indent", " " * indent)
+        kwargs["subsequent_indent"] = kwargs.get("subsequent_indent", " " * indent * 2)
+        oid_pstr_list = [
+            s.pprint_str(width=width, tabsize=tabsize, **kwargs)
+            for s in self.objectidentifier_list
+        ]
+        attr_pstr_list = [
+            a.pprint_str(width=width, tabsize=tabsize, **kwargs)
+            for a in self.attribute_list
+        ]
+        oclass_pstr_list = [
+            o.pprint_str(width=width, tabsize=tabsize, **kwargs)
+            for o in self.objectclass_list
+        ]
+        oid_pstr = "\n".join(oid_pstr_list)
+        attr_pstr = "\n\n".join(attr_pstr_list)
+        oclass_pstr = "\n\n".join(oclass_pstr_list)
+        schema_pstr_list = [
+            s for s in [oid_pstr, attr_pstr, oclass_pstr] if len(s.strip()) > 0
+        ]
+        return "\n\n".join(schema_pstr_list)

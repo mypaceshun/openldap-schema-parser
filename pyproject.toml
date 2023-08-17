@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "openldap-schema-parser"
-version = "1.0.0"
+version = "1.1.4.post1.dev0+d4f8171"
 description = "OpenLDAP schema file parser"
 authors = ["KAWAI Shun <shun@osstech.co.jp>"]
 license = "MIT"
@@ -43,14 +43,8 @@ pyproject-flake8 = "^0.0.1-alpha.4"
 schema-parser = "openldap_schema_parser.command:cli"
 
 [tool.poetry-dynamic-versioning]
-enable = true
+enable = false
 vcs = "git"
-
-[tool.poe.tasks.run]
-script = "openldap_schema_parser.parser:parse"
-args = [
-  { name = "target_file", options = ["-t", "--target"], default = "test.schema" }
-]
 
 [tool.poe.tasks.test]
 cmd = "pytest -v --cov=src/ --cov-report=html --cov-report=xml --cov-report=term tests/"

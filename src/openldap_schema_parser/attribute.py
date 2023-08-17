@@ -1,4 +1,5 @@
 from enum import Enum
+from textwrap import TextWrapper
 from typing import List, Optional, Union
 
 
@@ -96,3 +97,61 @@ class Attribute:
         args_list = [f"{k}={repr(v)}" for k, v in args_dict.items()]
 
         return f"Attribute({', '.join(args_list)})"
+
+    def _get_name_str(self) -> str:
+        """
+        self.name = "name1"
+        self.alias = ["alias1"]
+        > "( 'name1' 'alias1' )"
+
+        self.name = "name1"
+        self.alias = None
+        > "'name1'"
+        """
+        if self.name is None:
+            return ""
+        if self.alias is None:
+            return self.name
+        name_list = [self.name] + self.alias
+        name_str_list = [f"'{n}'" for n in name_list]
+        name_str = " ".join(name_str_list)
+        return f"( {name_str} )"
+
+    def pprint_str(self, width: int = 80, tabsize: int = 8, **kwargs) -> str:
+        """整形した文字列を返す関数
+
+        :param int width: 文字列を折り返す文字数
+        :param int tabsize: タブ文字数
+        :return: 整形済み文字列
+        :rtype: str
+        """
+        wrapper = TextWrapper(width=width, tabsize=tabsize, **kwargs)
+        attrs_str_list = [self.oid]
+        if self.name is not None:
+            attrs_str_list.append(f"NAME {self._get_name_str()}")
+        if self.description is not None:
+            attrs_str_list.append(f"DESC '{self.description}'")
+        if self.obsolete:
+            attrs_str_list.append("OBSOLETE")
+        if self.sup is not None:
+            attrs_str_list.append(f"SUP {self.sup}")
+        if self.equality is not None:
+            attrs_str_list.append(f"EQUALITY {self.equality}")
+        if self.ordering is not None:
+            attrs_str_list.append(f"ORDERING {self.ordering}")
+        if self.substr is not None:
+            attrs_str_list.append(f"SUBSTR {self.substr}")
+        if self.syntax is not None:
+            attrs_str_list.append(f"SYNTAX {self.syntax}")
+        if self.single_value:
+            attrs_str_list.append("SINGLE-VALUE")
+        if self.collective:
+            attrs_str_list.append("COLLECTIVE")
+        if self.no_user_modification:
+            attrs_str_list.append("NO-USER-MODIFICATION")
+        if self.usage:
+            attrs_str_list.append(f"USAGE {self.usage.value}")
+        attrs_str_list = [wrapper.fill(s) for s in attrs_str_list]
+        attrs_str = "\n".join(attrs_str_list)
+        attrs_str = f"attributeType ( {attrs_str.strip()} )"
+        return attrs_str

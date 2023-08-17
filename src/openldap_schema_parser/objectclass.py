@@ -1,4 +1,5 @@
 from enum import Enum
+from textwrap import TextWrapper
 from typing import List, Optional, Union
 
 
@@ -72,3 +73,36 @@ class ObjectClass:
             f"may={repr(self.may)}",
         ]
         return f"ObjectClass({','.join(args)})"
+
+    def pprint_str(self, width: int = 80, tabsize: int = 8, **kwargs) -> str:
+        """整形した文字列を返す関数
+
+        :param int width: 文字列を折り返す文字数
+        :param int tabsize: タブ文字数
+        :return: 整形済み文字列
+        :rtype: str
+        """
+        wrapper = TextWrapper(width=width, tabsize=tabsize, **kwargs)
+        oclass_str_list = [self.oid]
+        if self.name is not None:
+            oclass_str_list.append(f"NAME '{self.name}'")
+        if self.description is not None:
+            oclass_str_list.append(f"DESC '{self.description}'")
+        if self.obsolete:
+            oclass_str_list.append("OBSOLETE")
+        if self.sup is not None:
+            sup_str = "$$ ".join(self.sup)
+            oclass_str_list.append(f"SUP {sup_str}")
+        if self.structural_type is not None:
+            oclass_str_list.append(f"{self.structural_type.value}")
+        if len(self.must) > 0:
+            must_str = "$$ ".join(self.must)
+            oclass_str_list.append(f"MUST {must_str}")
+        if len(self.may) > 0:
+            may_str = "$$ ".join(self.may)
+            oclass_str_list.append(f"MAY {may_str}")
+        oclass_str_list = [wrapper.fill(s) for s in oclass_str_list]
+        oclass_str = "\n".join(oclass_str_list)
+        oclass_str = f"objectClasss ( {oclass_str.strip()} )"
+        oclass_str = oclass_str.replace("$$", " $")
+        return oclass_str
