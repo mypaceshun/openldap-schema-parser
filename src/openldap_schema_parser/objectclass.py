@@ -122,6 +122,6 @@ class ObjectClass:
             oclass_str_list.append(f"MAY {may_str}")
         oclass_str_list = [wrapper.fill(s) for s in oclass_str_list]
         oclass_str = "\n".join(oclass_str_list)
-        oclass_str = f"objectClasss ( {oclass_str.strip()} )"
+        oclass_str = f"objectClass ( {oclass_str.strip()} )"
         oclass_str = oclass_str.replace("$$", " $")
         return oclass_str
