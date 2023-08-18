@@ -116,9 +116,13 @@ class ObjectClass:
             oclass_str_list.append(f"{self.structural_type.value}")
         if len(self.must) > 0:
             must_str = "$$ ".join(self.must)
+            if len(self.must) > 1:
+                must_str = f"( {must_str} )"
             oclass_str_list.append(f"MUST {must_str}")
         if len(self.may) > 0:
             may_str = "$$ ".join(self.may)
+            if len(self.may) > 1:
+                may_str = f"( {may_str} )"
             oclass_str_list.append(f"MAY {may_str}")
         oclass_str_list = [wrapper.fill(s) for s in oclass_str_list]
         oclass_str = "\n".join(oclass_str_list)
