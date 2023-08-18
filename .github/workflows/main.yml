@@ -40,7 +40,7 @@ jobs:
       - name: Install libraries
         run: poetry install
       - name: run lint
-        run: poetry run poe lint
+        run: poetry poe lint
   test:
     needs: lint
     name: ${{ matrix.name }}
@@ -74,7 +74,7 @@ jobs:
       - name: Install libraries
         run: poetry install
       - name: run test
-        run: poetry run poe test
+        run: poetry poe test
       - name: upload codecov
         uses: codecov/codecov-action@v3
         with:

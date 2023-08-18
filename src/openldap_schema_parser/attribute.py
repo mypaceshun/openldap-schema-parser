@@ -111,7 +111,7 @@ class Attribute:
         if self.name is None:
             return ""
         if self.alias is None:
-            return self.name
+            return f"'{self.name}'"
         name_list = [self.name] + self.alias
         name_str_list = [f"'{n}'" for n in name_list]
         name_str = " ".join(name_str_list)

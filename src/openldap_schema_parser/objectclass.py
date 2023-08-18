@@ -74,6 +74,25 @@ class ObjectClass:
         ]
         return f"ObjectClass({','.join(args)})"
 
+    def _get_name_str(self) -> str:
+        """
+        self.name = "name1"
+        self.alias = ["alias1"]
+        > "( 'name1' 'alias1' )"
+
+        self.name = "name1"
+        self.alias = None
+        > "'name1'"
+        """
+        if self.name is None:
+            return ""
+        if self.alias is None:
+            return f"'{self.name}'"
+        name_list = [self.name] + self.alias
+        name_str_list = [f"'{n}'" for n in name_list]
+        name_str = " ".join(name_str_list)
+        return f"( {name_str} )"
+
     def pprint_str(self, width: int = 80, tabsize: int = 8, **kwargs) -> str:
         """整形した文字列を返す関数
 
@@ -85,7 +104,7 @@ class ObjectClass:
         wrapper = TextWrapper(width=width, tabsize=tabsize, **kwargs)
         oclass_str_list = [self.oid]
         if self.name is not None:
-            oclass_str_list.append(f"NAME '{self.name}'")
+            oclass_str_list.append(f"NAME {self._get_name_str()}")
         if self.description is not None:
             oclass_str_list.append(f"DESC '{self.description}'")
         if self.obsolete:

@@ -1,2 +1,2 @@
 [run]
-omit = src/openldap_schema_parser/schema_parser.py
+omit = src/openldap_schema_parser/schema_parser.py, src/openldap_schema_parser/exceptions.py
