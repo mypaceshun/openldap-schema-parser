@@ -87,9 +87,23 @@ class Schema:
                 obj.oid = macrooid.get_oid(suffix)
 
     def pprint(self, width: int = 80, tabsize: int = 8, **kwargs):
+        """整形した文字列を出力する関数
+
+        :param int width: 文字列を折り返す文字数
+        :param int tabsize: タブ文字数
+        :return: 整形済み文字列
+        :rtype: str
+        """
         print(self.pprint_str(width=width, tabsize=tabsize, **kwargs))
 
     def pprint_str(self, width: int = 80, tabsize: int = 8, **kwargs) -> str:
+        """整形した文字列を返す関数
+
+        :param int width: 文字列を折り返す文字数
+        :param int tabsize: タブ文字数
+        :return: 整形済み文字列
+        :rtype: str
+        """
         indent = kwargs.get("indent", 4)
         kwargs["initial_indent"] = kwargs.get("initial_indent", " " * indent)
         kwargs["subsequent_indent"] = kwargs.get("subsequent_indent", " " * indent * 2)
