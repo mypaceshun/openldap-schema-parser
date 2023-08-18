@@ -4,6 +4,10 @@ CHANGELOG
 v1.1
 ------------------
 
+* v1.1.9 (2023-08-18)
+
+  - Fix may/must format
+
 * v1.1.8 (2023-08-18)
 
   - Fix typo
