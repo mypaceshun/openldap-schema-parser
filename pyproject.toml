@@ -43,7 +43,7 @@ pyproject-flake8 = "^0.0.1-alpha.4"
 schema-parser = "openldap_schema_parser.command:cli"
 
 [tool.poetry-dynamic-versioning]
-enable = false
+enable = true
 vcs = "git"
 
 [tool.poe.tasks.test]
