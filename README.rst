@@ -7,8 +7,8 @@
    :target: https://github.com/mypaceshun/openldap-schema-parser/actions/workflows/main.yml
 .. image:: https://codecov.io/gh/mypaceshun/openldap-schema-parser/branch/main/graph/badge.svg?token=1H6ZVS122O
    :target: https://codecov.io/gh/mypaceshun/openldap-schema-parser
-.. image:: https://pepy.tech/badge/openldap-schema-parser
-   :target: https://pypi.org/project/openldap-schema-parser/
+.. image:: https://static.pepy.tech/badge/openldap-schema-parser
+   :target: https://www.pepy.tech/projects/openldap-schema-parser
 .. image:: https://readthedocs.org/projects/openldap-schema-parser/badge/?version=latest
    :target: https://openldap-schema-parser.readthedocs.io/ja/latest/?badge=latest
    :alt: Documentation Status
