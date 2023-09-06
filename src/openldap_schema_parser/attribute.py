@@ -125,7 +125,9 @@ class Attribute:
         :return: 整形済み文字列
         :rtype: str
         """
-        wrapper = TextWrapper(width=width, tabsize=tabsize, **kwargs)
+        wrapper = TextWrapper(
+            width=width, tabsize=tabsize, break_on_hyphens=False, **kwargs
+        )
         attrs_str_list = [self.oid]
         if self.name is not None:
             attrs_str_list.append(f"NAME {self._get_name_str()}")
