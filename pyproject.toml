@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "openldap-schema-parser"
-version = "1.1.4.post1.dev0+d4f8171"
+version = "1.0.0"
 description = "OpenLDAP schema file parser"
 authors = ["KAWAI Shun <shun@osstech.co.jp>"]
 license = "MIT"

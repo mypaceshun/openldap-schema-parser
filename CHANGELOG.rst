@@ -4,6 +4,10 @@ CHANGELOG
 v1.1
 ------------------
 
+* v1.1.10 (2023-09-6)
+
+  - Fix sup format for objectClass
+
 * v1.1.9 (2023-08-18)
 
   - Fix may/must format
