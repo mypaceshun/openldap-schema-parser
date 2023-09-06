@@ -111,6 +111,8 @@ class ObjectClass:
             oclass_str_list.append("OBSOLETE")
         if self.sup is not None:
             sup_str = "$$ ".join(self.sup)
+            if len(self.sup) > 1:
+                sup_str = f"( {sup_str} )"
             oclass_str_list.append(f"SUP {sup_str}")
         if self.structural_type is not None:
             oclass_str_list.append(f"{self.structural_type.value}")
